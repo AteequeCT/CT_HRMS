@@ -1,0 +1,9 @@
+RewriteEngine On
+    RewriteCond %{SERVER_PORT} 80
+
+RewriteCond %{REQUEST_FILENAME} -d [OR]
+RewriteCond %{REQUEST_FILENAME} -f
+RewriteRule ^ - [L]
+
+RewriteRule ^home/?$ index.php [L,NC]
+RewriteRule ^Dashboard/?$ Dashboard1.php [L,NC]
