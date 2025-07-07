@@ -7,7 +7,7 @@ $current_page = basename($_SERVER['PHP_SELF']);
 // Optional: For nested pages, you might want to highlight the parent menu.
 // Define an array of sub-pages for each main menu item.
 $attendance_pages = ['text.html', 'buttons.html', 'gridsystem.html', 'panels.html', 'notifications.html', 'sweetalert.html', 'font-awesome-icons.html', 'simple-line-icons.html', 'typography.html'];
-$crm_pages = ['crm_dashboard.php', 'icon-menu.html']; // Assuming 'icon-menu.html' is used for multiple CRM sub-items
+$crm_pages = ['crm_dashboard.php', 'text.php','add_user_modal.php','emp_dash.php']; // Assuming 'icon-menu.html' is used for multiple CRM sub-items
 $employees_pages = ['registration.php', 'allData.php'];
 $meetings_pages = ['meeting_details.php', 'meeting.php'];
 $leaves_pages = ['leave_request.php', 'leave_acc.php'];
@@ -127,11 +127,16 @@ $is_leaves_active = in_array($current_page, $leaves_pages);
             <ul class="nav nav-collapse">
                 <li>
                     <a href="crm_dashboard.php" class="<?php echo ($current_page == 'crm_dashboard.php') ? 'active' : ''; ?>">
-                        <span class="sub-item">clients</span>
+                        <span class="sub-item">CRM</span>
                     </a>
                 </li>
                 <li>
-                    <a href="icon-menu.html" class="<?php echo ($current_page == 'icon-menu.html' && !in_array($current_page, ['sidebar-style-2.html'])) ? 'active' : ''; ?>">
+                    <a href="text.php" class="<?php echo ($current_page == 'text.php') ? 'active' : ''; ?>">
+                        <span class="sub-item">clients</span>
+                    </a>
+                </li>
+                <li>     
+                    <a href="add_user_modal.php" class="<?php echo ($current_page == 'add_user_modal.php' && !in_array($current_page, ['sidebar-style-2.html'])) ? 'active' : ''; ?>">
                         <span class="sub-item">add clients</span>
                     </a>
                 </li>
@@ -141,7 +146,7 @@ $is_leaves_active = in_array($current_page, $leaves_pages);
                     </a>
                 </li>
                 <li>
-                    <a href="icon-menu.html" class="<?php echo ($current_page == 'icon-menu.html' && !in_array($current_page, ['sidebar-style-2.html', 'icon-menu.html'])) ? 'active' : ''; ?>">
+                    <a href="emp_dash.php" class="<?php echo ($current_page == 'emp_dash.php' && !in_array($current_page, ['sidebar-style-2.html', 'icon-menu.html'])) ? 'active' : ''; ?>">
                         <span class="sub-item">Employees</span>
                     </a>
                 </li>
